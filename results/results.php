@@ -34,6 +34,12 @@ td {
 td.html {
   font-size: 0.8em;
 }
+td.success {
+  background-color: #d5ead9;
+}
+tr.even .success {
+  background-color: #c9dccd;
+}
 td.fail {
   background-color: #f6e0e0;
 }
