@@ -18,6 +18,12 @@ table {
   width: 100%;
   border-collapse: collapse;
 }
+tr.top {
+  border-top: 2px #aaa solid;
+}
+.bottom {
+  border-bottom: 2px #aaa solid;
+}
 tr.even {
   background-color: #f6f6f6;
 }
@@ -57,10 +63,10 @@ td.testnum a {
   <tbody>
     <?php foreach($data as $i=>$test): ?>
       <?php foreach(['name', 'content.value', 'content.html'] as $j=>$prop): ?>
-        <tr class="<?= $i % 2 == 0 ? 'even' : 'odd' ?>">
+        <tr class="<?= $j == 0 ? 'top' : '' ?> <?= $i == count($data)-1 && $j == 2 ? 'bottom' : '' ?> <?= $i % 2 == 0 ? 'even' : 'odd' ?>">
           <?php if($j == 0): ?>
-            <td rowspan="3" class="testnum"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/<?= $test['test'] ?>.html"><?= $test['test'] ?></td>
-            <td rowspan="3" class="html"><pre><?= htmlspecialchars(file_get_contents('../tests/'.$test['test'].'.html')) ?></pre></td>
+            <td rowspan="3" class="testnum <?= $i == count($data)-1 ? 'bottom' : '' ?>"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/<?= $test['test'] ?>.html"><?= $test['test'] ?></td>
+            <td rowspan="3" class="html <?= $i == count($data)-1 ? 'bottom' : '' ?>"><pre><?= htmlspecialchars(file_get_contents('../tests/'.$test['test'].'.html')) ?></pre></td>
           <?php endif ?>
           <td><?= $prop ?></td>
           <td><pre><?= explicit_whitespace($test['expected'][$prop]) ?></pre></td>
