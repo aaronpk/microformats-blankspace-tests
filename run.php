@@ -24,7 +24,7 @@ function get_parsed_result($parser, $html) {
       $param = 'html';
       break;
     case 'php':
-      $url = 'https://mf2.io.dev/mf2/';
+      $url = 'https://pin13.net/mf2/';
       $param = 'html';
       break;
   }
