@@ -1,0 +1,32 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    json (2.1.0)
+    microformats (4.0.7)
+      json
+      nokogiri
+    mini_portile2 (2.3.0)
+    mustermann (1.0.2)
+    nokogiri (1.8.2)
+      mini_portile2 (~> 2.3.0)
+    puma (3.11.2)
+    rack (2.0.4)
+    rack-protection (2.0.1)
+      rack
+    sinatra (2.0.1)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.1)
+      tilt (~> 2.0)
+    tilt (2.0.8)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  microformats
+  puma
+  sinatra
+
+BUNDLED WITH
+   1.16.0
