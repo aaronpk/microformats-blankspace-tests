@@ -13,6 +13,9 @@ table td {
   border: 1px #ccc solid;
   padding: 4px;
 }
+table td.html {
+  font-size: 0.8em;
+}
 table td.fail {
   background-color: #f6e0e0;
 }
@@ -28,6 +31,7 @@ td.testnum a {
   <thead>
     <tr>
       <th>Test</th>
+      <th>HTML</th>
       <th>Property</th>
       <th>Expected</th>
       <th>PHP</th>
@@ -38,6 +42,10 @@ td.testnum a {
   <tbody>
                   <tr class="even">
                       <td rowspan="3" class="testnum"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/1.html">1</td>
+            <td rowspan="3" class="html"><pre>&lt;div class=&quot;h-entry&quot;&gt;
+  &lt;div class=&quot;e-content p-name&quot;&gt;&lt;p&gt;Hello World&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre></td>
                     <td>name</td>
           <td><pre>Hello World</pre></td>
                       <td class="success"><pre>Hello World</pre></td>
@@ -60,6 +68,10 @@ td.testnum a {
                   </tr>
                         <tr class="odd">
                       <td rowspan="3" class="testnum"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/2.html">2</td>
+            <td rowspan="3" class="html"><pre>&lt;div class=&quot;h-entry&quot;&gt;
+  &lt;div class=&quot;e-content p-name&quot;&gt;&lt;p&gt;Hello&lt;br&gt;World&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre></td>
                     <td>name</td>
           <td><pre>Hello\nWorld</pre></td>
                       <td class="success"><pre>Hello\nWorld</pre></td>
@@ -82,6 +94,11 @@ td.testnum a {
                   </tr>
                         <tr class="even">
                       <td rowspan="3" class="testnum"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/3.html">3</td>
+            <td rowspan="3" class="html"><pre>&lt;div class=&quot;h-entry&quot;&gt;
+  &lt;div class=&quot;e-content p-name&quot;&gt;&lt;p&gt;Hello&lt;br&gt;
+World&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre></td>
                     <td>name</td>
           <td><pre>Hello\nWorld</pre></td>
                       <td class="fail"><pre>Hello\n\nWorld</pre></td>
@@ -104,6 +121,12 @@ td.testnum a {
                   </tr>
                         <tr class="odd">
                       <td rowspan="3" class="testnum"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/4.html">4</td>
+            <td rowspan="3" class="html"><pre>&lt;div class=&quot;h-entry&quot;&gt;
+  &lt;div class=&quot;e-content p-name&quot;&gt;
+    &lt;p&gt;Hello World&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre></td>
                     <td>name</td>
           <td><pre>Hello World</pre></td>
                       <td class="success"><pre>Hello World</pre></td>
@@ -126,6 +149,11 @@ td.testnum a {
                   </tr>
                         <tr class="even">
                       <td rowspan="3" class="testnum"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/5.html">5</td>
+            <td rowspan="3" class="html"><pre>&lt;div class=&quot;h-entry&quot;&gt;
+  &lt;div class=&quot;e-content p-name&quot;&gt;Hello
+World&lt;/div&gt;
+&lt;/div&gt;
+</pre></td>
                     <td>name</td>
           <td><pre>Hello World</pre></td>
                       <td class="fail"><pre>Hello\nWorld</pre></td>
@@ -148,6 +176,10 @@ td.testnum a {
                   </tr>
                         <tr class="odd">
                       <td rowspan="3" class="testnum"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/6.html">6</td>
+            <td rowspan="3" class="html"><pre>&lt;div class=&quot;h-entry&quot;&gt;
+  &lt;div class=&quot;e-content p-name&quot;&gt;&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;World&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre></td>
                     <td>name</td>
           <td><pre>Hello\nWorld</pre></td>
                       <td class="fail"><pre>Hello World</pre></td>
@@ -170,6 +202,11 @@ td.testnum a {
                   </tr>
                         <tr class="even">
                       <td rowspan="3" class="testnum"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/7.html">7</td>
+            <td rowspan="3" class="html"><pre>&lt;div class=&quot;h-entry&quot;&gt;
+  &lt;div class=&quot;e-content p-name&quot;&gt;Hello&lt;br&gt;
+    World&lt;/div&gt;
+&lt;/div&gt;
+</pre></td>
                     <td>name</td>
           <td><pre>Hello\n World</pre></td>
                       <td class="fail"><pre>Hello\n\n    World</pre></td>
@@ -192,6 +229,10 @@ td.testnum a {
                   </tr>
                         <tr class="odd">
                       <td rowspan="3" class="testnum"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/8.html">8</td>
+            <td rowspan="3" class="html"><pre>&lt;div class=&quot;h-entry&quot;&gt;
+  &lt;div class=&quot;e-content p-name&quot;&gt;&lt;br&gt;Hello&lt;br&gt;World&lt;br&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre></td>
                     <td>name</td>
           <td><pre>Hello\nWorld</pre></td>
                       <td class="success"><pre>Hello\nWorld</pre></td>

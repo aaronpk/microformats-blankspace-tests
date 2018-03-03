@@ -25,6 +25,9 @@ table td {
   border: 1px #ccc solid;
   padding: 4px;
 }
+table td.html {
+  font-size: 0.8em;
+}
 table td.fail {
   background-color: #f6e0e0;
 }
@@ -40,6 +43,7 @@ td.testnum a {
   <thead>
     <tr>
       <th>Test</th>
+      <th>HTML</th>
       <th>Property</th>
       <th>Expected</th>
       <th>PHP</th>
@@ -53,6 +57,7 @@ td.testnum a {
         <tr class="<?= $i % 2 == 0 ? 'even' : 'odd' ?>">
           <?php if($j == 0): ?>
             <td rowspan="3" class="testnum"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/<?= $test['test'] ?>.html"><?= $test['test'] ?></td>
+            <td rowspan="3" class="html"><pre><?= htmlspecialchars(file_get_contents('../tests/'.$test['test'].'.html')) ?></pre></td>
           <?php endif ?>
           <td><?= $prop ?></td>
           <td><pre><?= explicit_whitespace($test['expected'][$prop]) ?></pre></td>
