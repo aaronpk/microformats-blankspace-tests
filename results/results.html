@@ -1,0 +1,216 @@
+<style>
+body {
+  font-family: sans-serif;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table tr.even {
+  background-color: #f6f6f6;
+}
+table td {
+  border: 1px #ccc solid;
+  padding: 4px;
+}
+table td.fail {
+  background-color: #f6e0e0;
+}
+td.testnum {
+  text-align: center;
+  font-size: 1.4em;
+}
+td.testnum a {
+  text-decoration: none;
+}
+</style>
+<table>
+  <thead>
+    <tr>
+      <th>Test</th>
+      <th>Property</th>
+      <th>Expected</th>
+      <th>PHP</th>
+      <th>Ruby</th>
+      <th>Python</th>
+    </tr>
+  </thead>
+  <tbody>
+                  <tr class="even">
+                      <td rowspan="3" class="testnum"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/1.html">1</td>
+                    <td>name</td>
+          <td><pre>Hello World</pre></td>
+                      <td class="success"><pre>Hello World</pre></td>
+                      <td class="success"><pre>Hello World</pre></td>
+                      <td class="success"><pre>Hello World</pre></td>
+                  </tr>
+              <tr class="even">
+                    <td>content.value</td>
+          <td><pre>Hello World</pre></td>
+                      <td class="success"><pre>Hello World</pre></td>
+                      <td class="success"><pre>Hello World</pre></td>
+                      <td class="success"><pre>Hello World</pre></td>
+                  </tr>
+              <tr class="even">
+                    <td>content.html</td>
+          <td><pre>&lt;p&gt;Hello World&lt;/p&gt;</pre></td>
+                      <td class="success"><pre>&lt;p&gt;Hello World&lt;/p&gt;</pre></td>
+                      <td class="success"><pre>&lt;p&gt;Hello World&lt;/p&gt;</pre></td>
+                      <td class="success"><pre>&lt;p&gt;Hello World&lt;/p&gt;</pre></td>
+                  </tr>
+                        <tr class="odd">
+                      <td rowspan="3" class="testnum"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/2.html">2</td>
+                    <td>name</td>
+          <td><pre>Hello\nWorld</pre></td>
+                      <td class="success"><pre>Hello\nWorld</pre></td>
+                      <td class="fail"><pre>HelloWorld</pre></td>
+                      <td class="fail"><pre>HelloWorld</pre></td>
+                  </tr>
+              <tr class="odd">
+                    <td>content.value</td>
+          <td><pre>Hello\nWorld</pre></td>
+                      <td class="success"><pre>Hello\nWorld</pre></td>
+                      <td class="fail"><pre>HelloWorld</pre></td>
+                      <td class="fail"><pre>HelloWorld</pre></td>
+                  </tr>
+              <tr class="odd">
+                    <td>content.html</td>
+          <td><pre>&lt;p&gt;Hello&lt;br&gt;World&lt;/p&gt;</pre></td>
+                      <td class="success"><pre>&lt;p&gt;Hello&lt;br&gt;World&lt;/p&gt;</pre></td>
+                      <td class="success"><pre>&lt;p&gt;Hello&lt;br&gt;World&lt;/p&gt;</pre></td>
+                      <td class="fail"><pre>&lt;p&gt;Hello&lt;br/&gt;World&lt;/p&gt;</pre></td>
+                  </tr>
+                        <tr class="even">
+                      <td rowspan="3" class="testnum"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/3.html">3</td>
+                    <td>name</td>
+          <td><pre>Hello\nWorld</pre></td>
+                      <td class="fail"><pre>Hello\n\nWorld</pre></td>
+                      <td class="success"><pre>Hello\nWorld</pre></td>
+                      <td class="success"><pre>Hello\nWorld</pre></td>
+                  </tr>
+              <tr class="even">
+                    <td>content.value</td>
+          <td><pre>Hello\nWorld</pre></td>
+                      <td class="fail"><pre>Hello\n\nWorld</pre></td>
+                      <td class="success"><pre>Hello\nWorld</pre></td>
+                      <td class="success"><pre>Hello\nWorld</pre></td>
+                  </tr>
+              <tr class="even">
+                    <td>content.html</td>
+          <td><pre>&lt;p&gt;Hello&lt;br&gt;\nWorld&lt;/p&gt;</pre></td>
+                      <td class="success"><pre>&lt;p&gt;Hello&lt;br&gt;\nWorld&lt;/p&gt;</pre></td>
+                      <td class="success"><pre>&lt;p&gt;Hello&lt;br&gt;\nWorld&lt;/p&gt;</pre></td>
+                      <td class="fail"><pre>&lt;p&gt;Hello&lt;br/&gt;\nWorld&lt;/p&gt;</pre></td>
+                  </tr>
+                        <tr class="odd">
+                      <td rowspan="3" class="testnum"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/4.html">4</td>
+                    <td>name</td>
+          <td><pre>Hello World</pre></td>
+                      <td class="success"><pre>Hello World</pre></td>
+                      <td class="success"><pre>Hello World</pre></td>
+                      <td class="success"><pre>Hello World</pre></td>
+                  </tr>
+              <tr class="odd">
+                    <td>content.value</td>
+          <td><pre>Hello World</pre></td>
+                      <td class="success"><pre>Hello World</pre></td>
+                      <td class="success"><pre>Hello World</pre></td>
+                      <td class="fail"><pre>\n    Hello World\n  </pre></td>
+                  </tr>
+              <tr class="odd">
+                    <td>content.html</td>
+          <td><pre>\n    &lt;p&gt;Hello World&lt;/p&gt;\n  </pre></td>
+                      <td class="success"><pre>\n    &lt;p&gt;Hello World&lt;/p&gt;\n  </pre></td>
+                      <td class="fail"><pre>\n    &lt;p&gt;Hello World&lt;/p&gt;\n</pre></td>
+                      <td class="success"><pre>\n    &lt;p&gt;Hello World&lt;/p&gt;\n  </pre></td>
+                  </tr>
+                        <tr class="even">
+                      <td rowspan="3" class="testnum"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/5.html">5</td>
+                    <td>name</td>
+          <td><pre>Hello World</pre></td>
+                      <td class="fail"><pre>Hello\nWorld</pre></td>
+                      <td class="fail"><pre>Hello\nWorld</pre></td>
+                      <td class="fail"><pre>Hello\nWorld</pre></td>
+                  </tr>
+              <tr class="even">
+                    <td>content.value</td>
+          <td><pre>Hello World</pre></td>
+                      <td class="fail"><pre>Hello\nWorld</pre></td>
+                      <td class="fail"><pre>Hello\nWorld</pre></td>
+                      <td class="fail"><pre>Hello\nWorld</pre></td>
+                  </tr>
+              <tr class="even">
+                    <td>content.html</td>
+          <td><pre>Hello\nWorld</pre></td>
+                      <td class="success"><pre>Hello\nWorld</pre></td>
+                      <td class="success"><pre>Hello\nWorld</pre></td>
+                      <td class="success"><pre>Hello\nWorld</pre></td>
+                  </tr>
+                        <tr class="odd">
+                      <td rowspan="3" class="testnum"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/6.html">6</td>
+                    <td>name</td>
+          <td><pre>Hello\nWorld</pre></td>
+                      <td class="fail"><pre>Hello World</pre></td>
+                      <td class="success"><pre>Hello\nWorld</pre></td>
+                      <td class="fail"><pre>HelloWorld</pre></td>
+                  </tr>
+              <tr class="odd">
+                    <td>content.value</td>
+          <td><pre>Hello\nWorld</pre></td>
+                      <td class="fail"><pre>Hello World</pre></td>
+                      <td class="success"><pre>Hello\nWorld</pre></td>
+                      <td class="fail"><pre>HelloWorld</pre></td>
+                  </tr>
+              <tr class="odd">
+                    <td>content.html</td>
+          <td><pre>&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;World&lt;/p&gt;</pre></td>
+                      <td class="fail"><pre>&lt;p&gt;Hello&lt;/p&gt;\n&lt;p&gt;World&lt;/p&gt;</pre></td>
+                      <td class="fail"><pre>&lt;p&gt;Hello&lt;/p&gt;\n&lt;p&gt;World&lt;/p&gt;</pre></td>
+                      <td class="success"><pre>&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;World&lt;/p&gt;</pre></td>
+                  </tr>
+                        <tr class="even">
+                      <td rowspan="3" class="testnum"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/7.html">7</td>
+                    <td>name</td>
+          <td><pre>Hello\n World</pre></td>
+                      <td class="fail"><pre>Hello\n\n    World</pre></td>
+                      <td class="fail"><pre>Hello\n    World</pre></td>
+                      <td class="fail"><pre>Hello\n    World</pre></td>
+                  </tr>
+              <tr class="even">
+                    <td>content.value</td>
+          <td><pre>Hello\n World</pre></td>
+                      <td class="fail"><pre>Hello\n\n    World</pre></td>
+                      <td class="fail"><pre>Hello\n    World</pre></td>
+                      <td class="fail"><pre>Hello\n    World</pre></td>
+                  </tr>
+              <tr class="even">
+                    <td>content.html</td>
+          <td><pre>Hello&lt;br&gt;\n    World</pre></td>
+                      <td class="success"><pre>Hello&lt;br&gt;\n    World</pre></td>
+                      <td class="success"><pre>Hello&lt;br&gt;\n    World</pre></td>
+                      <td class="fail"><pre>Hello&lt;br/&gt;\n    World</pre></td>
+                  </tr>
+                        <tr class="odd">
+                      <td rowspan="3" class="testnum"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/8.html">8</td>
+                    <td>name</td>
+          <td><pre>Hello\nWorld</pre></td>
+                      <td class="success"><pre>Hello\nWorld</pre></td>
+                      <td class="fail"><pre>HelloWorld</pre></td>
+                      <td class="fail"><pre>HelloWorld</pre></td>
+                  </tr>
+              <tr class="odd">
+                    <td>content.value</td>
+          <td><pre>Hello\nWorld</pre></td>
+                      <td class="success"><pre>Hello\nWorld</pre></td>
+                      <td class="fail"><pre>HelloWorld</pre></td>
+                      <td class="fail"><pre>HelloWorld</pre></td>
+                  </tr>
+              <tr class="odd">
+                    <td>content.html</td>
+          <td><pre>&lt;br&gt;Hello&lt;br&gt;World&lt;br&gt;</pre></td>
+                      <td class="success"><pre>&lt;br&gt;Hello&lt;br&gt;World&lt;br&gt;</pre></td>
+                      <td class="success"><pre>&lt;br&gt;Hello&lt;br&gt;World&lt;br&gt;</pre></td>
+                      <td class="fail"><pre>&lt;br/&gt;Hello&lt;br/&gt;World&lt;br/&gt;</pre></td>
+                  </tr>
+            </tbody>
+</table>

@@ -1,0 +1,186 @@
+[
+    {
+        "test": "1",
+        "expected": {
+            "name": "Hello World",
+            "content.value": "Hello World",
+            "content.html": "<p>Hello World</p>"
+        },
+        "php": {
+            "name": "Hello World",
+            "content.value": "Hello World",
+            "content.html": "<p>Hello World</p>"
+        },
+        "ruby": {
+            "name": "Hello World",
+            "content.value": "Hello World",
+            "content.html": "<p>Hello World</p>"
+        },
+        "python": {
+            "name": "Hello World",
+            "content.value": "Hello World",
+            "content.html": "<p>Hello World</p>"
+        }
+    },
+    {
+        "test": "2",
+        "expected": {
+            "name": "Hello\nWorld",
+            "content.value": "Hello\nWorld",
+            "content.html": "<p>Hello<br>World</p>"
+        },
+        "php": {
+            "name": "Hello\nWorld",
+            "content.value": "Hello\nWorld",
+            "content.html": "<p>Hello<br>World</p>"
+        },
+        "ruby": {
+            "name": "HelloWorld",
+            "content.value": "HelloWorld",
+            "content.html": "<p>Hello<br>World</p>"
+        },
+        "python": {
+            "name": "HelloWorld",
+            "content.value": "HelloWorld",
+            "content.html": "<p>Hello<br/>World</p>"
+        }
+    },
+    {
+        "test": "3",
+        "expected": {
+            "name": "Hello\nWorld",
+            "content.value": "Hello\nWorld",
+            "content.html": "<p>Hello<br>\nWorld</p>"
+        },
+        "php": {
+            "name": "Hello\n\nWorld",
+            "content.value": "Hello\n\nWorld",
+            "content.html": "<p>Hello<br>\nWorld</p>"
+        },
+        "ruby": {
+            "name": "Hello\nWorld",
+            "content.value": "Hello\nWorld",
+            "content.html": "<p>Hello<br>\nWorld</p>"
+        },
+        "python": {
+            "name": "Hello\nWorld",
+            "content.value": "Hello\nWorld",
+            "content.html": "<p>Hello<br/>\nWorld</p>"
+        }
+    },
+    {
+        "test": "4",
+        "expected": {
+            "name": "Hello World",
+            "content.value": "Hello World",
+            "content.html": "\n    <p>Hello World</p>\n  "
+        },
+        "php": {
+            "name": "Hello World",
+            "content.value": "Hello World",
+            "content.html": "\n    <p>Hello World</p>\n  "
+        },
+        "ruby": {
+            "name": "Hello World",
+            "content.value": "Hello World",
+            "content.html": "\n    <p>Hello World</p>\n"
+        },
+        "python": {
+            "name": "Hello World",
+            "content.value": "\n    Hello World\n  ",
+            "content.html": "\n    <p>Hello World</p>\n  "
+        }
+    },
+    {
+        "test": "5",
+        "expected": {
+            "name": "Hello World",
+            "content.value": "Hello World",
+            "content.html": "Hello\nWorld"
+        },
+        "php": {
+            "name": "Hello\nWorld",
+            "content.value": "Hello\nWorld",
+            "content.html": "Hello\nWorld"
+        },
+        "ruby": {
+            "name": "Hello\nWorld",
+            "content.value": "Hello\nWorld",
+            "content.html": "Hello\nWorld"
+        },
+        "python": {
+            "name": "Hello\nWorld",
+            "content.value": "Hello\nWorld",
+            "content.html": "Hello\nWorld"
+        }
+    },
+    {
+        "test": "6",
+        "expected": {
+            "name": "Hello\nWorld",
+            "content.value": "Hello\nWorld",
+            "content.html": "<p>Hello</p><p>World</p>"
+        },
+        "php": {
+            "name": "Hello World",
+            "content.value": "Hello World",
+            "content.html": "<p>Hello</p>\n<p>World</p>"
+        },
+        "ruby": {
+            "name": "Hello\nWorld",
+            "content.value": "Hello\nWorld",
+            "content.html": "<p>Hello</p>\n<p>World</p>"
+        },
+        "python": {
+            "name": "HelloWorld",
+            "content.value": "HelloWorld",
+            "content.html": "<p>Hello</p><p>World</p>"
+        }
+    },
+    {
+        "test": "7",
+        "expected": {
+            "name": "Hello\n World",
+            "content.value": "Hello\n World",
+            "content.html": "Hello<br>\n    World"
+        },
+        "php": {
+            "name": "Hello\n\n    World",
+            "content.value": "Hello\n\n    World",
+            "content.html": "Hello<br>\n    World"
+        },
+        "ruby": {
+            "name": "Hello\n    World",
+            "content.value": "Hello\n    World",
+            "content.html": "Hello<br>\n    World"
+        },
+        "python": {
+            "name": "Hello\n    World",
+            "content.value": "Hello\n    World",
+            "content.html": "Hello<br/>\n    World"
+        }
+    },
+    {
+        "test": "8",
+        "expected": {
+            "name": "Hello\nWorld",
+            "content.value": "Hello\nWorld",
+            "content.html": "<br>Hello<br>World<br>"
+        },
+        "php": {
+            "name": "Hello\nWorld",
+            "content.value": "Hello\nWorld",
+            "content.html": "<br>Hello<br>World<br>"
+        },
+        "ruby": {
+            "name": "HelloWorld",
+            "content.value": "HelloWorld",
+            "content.html": "<br>Hello<br>World<br>"
+        },
+        "python": {
+            "name": "HelloWorld",
+            "content.value": "HelloWorld",
+            "content.html": "<br/>Hello<br/>World<br/>"
+        }
+    }
+]
