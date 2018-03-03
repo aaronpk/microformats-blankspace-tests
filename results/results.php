@@ -64,6 +64,8 @@ td.testnum a {
       <th>PHP</th>
       <th>Ruby</th>
       <th>Python</th>
+      <th>Go</th>
+      <th>Node</th>
     </tr>
   </thead>
   <tbody>
@@ -76,7 +78,7 @@ td.testnum a {
           <?php endif ?>
           <td><?= $prop ?></td>
           <td><pre><?= explicit_whitespace($test['expected'][$prop]) ?></pre></td>
-          <?php foreach(['php','ruby','python'] as $parser): ?>
+          <?php foreach(['php','ruby','python','go','node'] as $parser): ?>
             <td class="<?= $test['expected'][$prop] == $test[$parser][$prop] ? 'success' : 'fail' ?>"><pre><?= explicit_whitespace($test[$parser][$prop]) ?></pre></td>
           <?php endforeach ?>
         </tr>

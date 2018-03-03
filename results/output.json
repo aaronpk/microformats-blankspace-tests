@@ -20,6 +20,16 @@
             "name": "Hello World",
             "content.value": "Hello World",
             "content.html": "<p>Hello World</p>"
+        },
+        "go": {
+            "name": "Hello World",
+            "content.value": "Hello World",
+            "content.html": "<p>Hello World</p>"
+        },
+        "node": {
+            "name": "Hello World",
+            "content.value": "Hello World",
+            "content.html": "<p>Hello World</p>"
         }
     },
     {
@@ -43,6 +53,16 @@
             "name": "HelloWorld",
             "content.value": "HelloWorld",
             "content.html": "<p>Hello<br/>World</p>"
+        },
+        "go": {
+            "name": "HelloWorld",
+            "content.value": "HelloWorld",
+            "content.html": "<p>Hello<br/>World</p>"
+        },
+        "node": {
+            "name": "HelloWorld",
+            "content.value": "HelloWorld",
+            "content.html": "<p>Hello<br />World</p>"
         }
     },
     {
@@ -66,6 +86,16 @@
             "name": "Hello\nWorld",
             "content.value": "Hello\nWorld",
             "content.html": "<p>Hello<br/>\nWorld</p>"
+        },
+        "go": {
+            "name": "Hello\nWorld",
+            "content.value": "Hello\nWorld",
+            "content.html": "<p>Hello<br/>\nWorld</p>"
+        },
+        "node": {
+            "name": "Hello\nWorld",
+            "content.value": "Hello\nWorld",
+            "content.html": "<p>Hello<br />\nWorld</p>"
         }
     },
     {
@@ -89,6 +119,16 @@
             "name": "Hello World",
             "content.value": "\n    Hello World\n  ",
             "content.html": "\n    <p>Hello World</p>\n  "
+        },
+        "go": {
+            "name": "Hello World",
+            "content.value": "\n    Hello World\n  ",
+            "content.html": "<p>Hello World</p>"
+        },
+        "node": {
+            "name": "Hello World",
+            "content.value": "Hello World",
+            "content.html": "\n    <p>Hello World</p>\n  "
         }
     },
     {
@@ -109,6 +149,16 @@
             "content.html": "Hello\nWorld"
         },
         "python": {
+            "name": "Hello\nWorld",
+            "content.value": "Hello\nWorld",
+            "content.html": "Hello\nWorld"
+        },
+        "go": {
+            "name": "Hello\nWorld",
+            "content.value": "Hello\nWorld",
+            "content.html": "Hello\nWorld"
+        },
+        "node": {
             "name": "Hello\nWorld",
             "content.value": "Hello\nWorld",
             "content.html": "Hello\nWorld"
@@ -135,6 +185,16 @@
             "name": "HelloWorld",
             "content.value": "HelloWorld",
             "content.html": "<p>Hello</p><p>World</p>"
+        },
+        "go": {
+            "name": "HelloWorld",
+            "content.value": "HelloWorld",
+            "content.html": "<p>Hello</p><p>World</p>"
+        },
+        "node": {
+            "name": "HelloWorld",
+            "content.value": "HelloWorld",
+            "content.html": "<p>Hello</p><p>World</p>"
         }
     },
     {
@@ -158,6 +218,16 @@
             "name": "Hello\n    World",
             "content.value": "Hello\n    World",
             "content.html": "Hello<br/>\n    World"
+        },
+        "go": {
+            "name": "Hello\n    World",
+            "content.value": "Hello\n    World",
+            "content.html": "Hello<br/>\n    World"
+        },
+        "node": {
+            "name": "Hello\n    World",
+            "content.value": "Hello\n    World",
+            "content.html": "Hello<br />\n    World"
         }
     },
     {
@@ -181,6 +251,16 @@
             "name": "HelloWorld",
             "content.value": "HelloWorld",
             "content.html": "<br/>Hello<br/>World<br/>"
+        },
+        "go": {
+            "name": "HelloWorld",
+            "content.value": "HelloWorld",
+            "content.html": "<br/>Hello<br/>World<br/>"
+        },
+        "node": {
+            "name": "HelloWorld",
+            "content.value": "HelloWorld",
+            "content.html": "<br />Hello<br />World<br />"
         }
     }
 ]

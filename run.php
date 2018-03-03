@@ -8,12 +8,27 @@ function post($url, $params) {
   $data = json_decode($response, true);
   if($data && isset($data['items'][0]['properties'])) {
     return $data['items'][0]['properties'];
-  } else {
-    return false;
+  } elseif($response) {
+    if(preg_match('~<pre><code>(.+)</code></pre>~ms', $response, $match)) {
+      $data = json_decode(htmlspecialchars_decode($match[1]), true);
+      return $data['items'][0]['properties'];
+    }
   }
+  return false;
 }
 
-function get_parsed_result($parser, $html) {
+function get($url) {
+  $ch = curl_init($url);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  $response = curl_exec($ch);
+  $data = json_decode($response, true);
+  if($data && isset($data['items'][0]['properties'])) {
+    return $data['items'][0]['properties'];
+  }
+  return false;
+}
+
+function get_parsed_result($parser, $html, $num=false) {
   switch($parser) {
     case 'python':
       $url = 'https://python.microformats.io/';
@@ -27,9 +42,20 @@ function get_parsed_result($parser, $html) {
       $url = 'https://pin13.net/mf2/';
       $param = 'html';
       break;
+    case 'go':
+      $url = 'https://go.microformats.io/';
+      $param = 'html';
+      break;
+    case 'node':
+      $url = 'https://sturdy-backbone.glitch.me/mf2/?url=https://raw.githubusercontent.com/aaronpk/microformats-whitespace-tests/master/tests/%.html';
+      break;
   }
 
-  $response = post($url, [$param => $html, 'format'=>'json']);
+  if($num) {
+    $response = get(str_replace('%', $num, $url));
+  } else {
+    $response = post($url, [$param => $html, 'format'=>'json']);
+  }
 
   return [
     'name' => $response['name'][0],
@@ -57,6 +83,8 @@ foreach($tests as $htmlfile) {
   $php = get_parsed_result('php', $html);
   $ruby = get_parsed_result('ruby', $html);
   $python = get_parsed_result('python', $html);
+  $go = get_parsed_result('go', $html);
+  $node = get_parsed_result('node', $html, $num);
 
   $data[] = [
     'test' => $num,
@@ -64,6 +92,8 @@ foreach($tests as $htmlfile) {
     'php' => $php,
     'ruby' => $ruby,
     'python' => $python,
+    'go' => $go,
+    'node' => $node,
   ];
 }
 
