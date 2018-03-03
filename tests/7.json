@@ -1,0 +1,20 @@
+{
+    "items": [
+        {
+            "type": [
+                "h-entry"
+            ],
+            "properties": {
+                "name": [
+                    "Hello\n World"
+                ],
+                "content": [
+                    {
+                        "html": "Hello<br>\n    World",
+                        "value": "Hello\n World"
+                    }
+                ]
+            }
+        }
+    ]
+}
