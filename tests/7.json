@@ -6,12 +6,12 @@
             ],
             "properties": {
                 "name": [
-                    "Hello\n World"
+                    "Hello\nWorld"
                 ],
                 "content": [
                     {
                         "html": "Hello<br>\n    World",
-                        "value": "Hello\n World"
+                        "value": "Hello\nWorld"
                     }
                 ]
             }
