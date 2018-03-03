@@ -18,18 +18,21 @@ table {
   width: 100%;
   border-collapse: collapse;
 }
-table tr.even {
+tr.even {
   background-color: #f6f6f6;
 }
-table td {
+td {
   border: 1px #ccc solid;
   padding: 4px;
 }
-table td.html {
+td.html {
   font-size: 0.8em;
 }
-table td.fail {
+td.fail {
   background-color: #f6e0e0;
+}
+tr.even .fail {
+  background-color: #ead5d5;
 }
 td.testnum {
   text-align: center;
