@@ -8,6 +8,11 @@ function explicit_whitespace($v) {
   return htmlspecialchars($v);
 }
 
+function normalize($input) {
+  // convert <br /> and <br/> to <br> for comparing equality
+  return str_replace(['<br/>','<br />'], '<br>', $input);
+}
+
 ob_start();
 ?>
 <style>
@@ -24,9 +29,6 @@ tr.top {
 .bottom {
   border-bottom: 2px #aaa solid;
 }
-tr.even {
-  background-color: #f6f6f6;
-}
 td {
   border: 1px #ccc solid;
   padding: 4px;
@@ -37,14 +39,8 @@ td.html {
 td.success {
   background-color: #d5ead9;
 }
-tr.even .success {
-  background-color: #c9dccd;
-}
 td.fail {
   background-color: #f6e0e0;
-}
-tr.even .fail {
-  background-color: #ead5d5;
 }
 td.testnum {
   text-align: center;
@@ -79,7 +75,7 @@ td.testnum a {
           <td><?= $prop ?></td>
           <td><pre><?= explicit_whitespace($test['expected'][$prop]) ?></pre></td>
           <?php foreach(['php','ruby','python','go','node'] as $parser): ?>
-            <td class="<?= $test['expected'][$prop] == $test[$parser][$prop] ? 'success' : 'fail' ?>"><pre><?= explicit_whitespace($test[$parser][$prop]) ?></pre></td>
+            <td class="<?= normalize($test['expected'][$prop]) == normalize($test[$parser][$prop]) ? 'success' : 'fail' ?>"><pre><?= explicit_whitespace($test[$parser][$prop]) ?></pre></td>
           <?php endforeach ?>
         </tr>
       <?php endforeach ?>
