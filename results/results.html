@@ -278,8 +278,8 @@ World&lt;/div&gt;
                       <td class="success"><pre>Hello&lt;br /&gt;\n    World</pre></td>
                   </tr>
                         <tr class="top  odd">
-                      <td rowspan="3" class="testnum bottom"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/8.html">8</td>
-            <td rowspan="3" class="html bottom"><pre>&lt;div class=&quot;h-entry&quot;&gt;
+                      <td rowspan="3" class="testnum "><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/8.html">8</td>
+            <td rowspan="3" class="html "><pre>&lt;div class=&quot;h-entry&quot;&gt;
   &lt;div class=&quot;e-content p-name&quot;&gt;&lt;br&gt;Hello&lt;br&gt;World&lt;br&gt;&lt;/div&gt;
 &lt;/div&gt;
 </pre></td>
@@ -300,7 +300,7 @@ World&lt;/div&gt;
                       <td class="fail"><pre>HelloWorld</pre></td>
                       <td class="fail"><pre>HelloWorld</pre></td>
                   </tr>
-              <tr class=" bottom odd">
+              <tr class="  odd">
                     <td>content.html</td>
           <td><pre>&lt;br&gt;Hello&lt;br&gt;World&lt;br&gt;</pre></td>
                       <td class="success"><pre>&lt;br&gt;Hello&lt;br&gt;World&lt;br&gt;</pre></td>
@@ -308,6 +308,42 @@ World&lt;/div&gt;
                       <td class="success"><pre>&lt;br/&gt;Hello&lt;br/&gt;World&lt;br/&gt;</pre></td>
                       <td class="success"><pre>&lt;br/&gt;Hello&lt;br/&gt;World&lt;br/&gt;</pre></td>
                       <td class="success"><pre>&lt;br /&gt;Hello&lt;br /&gt;World&lt;br /&gt;</pre></td>
+                  </tr>
+                        <tr class="top  even">
+                      <td rowspan="3" class="testnum bottom"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/9.html">9</td>
+            <td rowspan="3" class="html bottom"><pre>&lt;div class=&quot;h-entry&quot;&gt;
+  &lt;div class=&quot;e-content p-name&quot;&gt;
+    &lt;p&gt;One&lt;/p&gt;
+    &lt;p&gt;Two&lt;/p&gt;
+    &lt;p&gt;Three&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre></td>
+                    <td>name</td>
+          <td><pre>One\nTwo\nThree</pre></td>
+                      <td class="fail"><pre>One \n    Two \n    Three</pre></td>
+                      <td class="fail"><pre>One\n    Two\n    Three</pre></td>
+                      <td class="fail"><pre>One\n    Two\n    Three</pre></td>
+                      <td class="fail"><pre>One\n    Two\n    Three</pre></td>
+                      <td class="fail"><pre>One\n    Two\n    Three</pre></td>
+                  </tr>
+              <tr class="  even">
+                    <td>content.value</td>
+          <td><pre>One\nTwo\nThree</pre></td>
+                      <td class="fail"><pre>One \n    Two \n    Three</pre></td>
+                      <td class="fail"><pre>One\n    Two\n    Three</pre></td>
+                      <td class="fail"><pre>\n    One\n    Two\n    Three\n  </pre></td>
+                      <td class="fail"><pre>\n    One\n    Two\n    Three\n  </pre></td>
+                      <td class="fail"><pre>One\n    Two\n    Three</pre></td>
+                  </tr>
+              <tr class=" bottom even">
+                    <td>content.html</td>
+          <td><pre>&lt;p&gt;One&lt;/p&gt;\n    &lt;p&gt;Two&lt;/p&gt;\n    &lt;p&gt;Three&lt;/p&gt;</pre></td>
+                      <td class="fail"><pre>\n    &lt;p&gt;One&lt;/p&gt;\n    &lt;p&gt;Two&lt;/p&gt;\n    &lt;p&gt;Three&lt;/p&gt;\n  </pre></td>
+                      <td class="fail"><pre>\n    &lt;p&gt;One&lt;/p&gt;\n    &lt;p&gt;Two&lt;/p&gt;\n    &lt;p&gt;Three&lt;/p&gt;\n</pre></td>
+                      <td class="fail"><pre>\n    &lt;p&gt;One&lt;/p&gt;\n    &lt;p&gt;Two&lt;/p&gt;\n    &lt;p&gt;Three&lt;/p&gt;\n  </pre></td>
+                      <td class="success"><pre>&lt;p&gt;One&lt;/p&gt;\n    &lt;p&gt;Two&lt;/p&gt;\n    &lt;p&gt;Three&lt;/p&gt;</pre></td>
+                      <td class="fail"><pre>\n    &lt;p&gt;One&lt;/p&gt;\n    &lt;p&gt;Two&lt;/p&gt;\n    &lt;p&gt;Three&lt;/p&gt;\n  </pre></td>
                   </tr>
             </tbody>
 </table>

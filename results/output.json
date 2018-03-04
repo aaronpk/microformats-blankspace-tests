@@ -262,5 +262,38 @@
             "content.value": "HelloWorld",
             "content.html": "<br />Hello<br />World<br />"
         }
+    },
+    {
+        "test": "9",
+        "expected": {
+            "name": "One\nTwo\nThree",
+            "content.value": "One\nTwo\nThree",
+            "content.html": "<p>One</p>\n    <p>Two</p>\n    <p>Three</p>"
+        },
+        "php": {
+            "name": "One \n    Two \n    Three",
+            "content.value": "One \n    Two \n    Three",
+            "content.html": "\n    <p>One</p>\n    <p>Two</p>\n    <p>Three</p>\n  "
+        },
+        "ruby": {
+            "name": "One\n    Two\n    Three",
+            "content.value": "One\n    Two\n    Three",
+            "content.html": "\n    <p>One</p>\n    <p>Two</p>\n    <p>Three</p>\n"
+        },
+        "python": {
+            "name": "One\n    Two\n    Three",
+            "content.value": "\n    One\n    Two\n    Three\n  ",
+            "content.html": "\n    <p>One</p>\n    <p>Two</p>\n    <p>Three</p>\n  "
+        },
+        "go": {
+            "name": "One\n    Two\n    Three",
+            "content.value": "\n    One\n    Two\n    Three\n  ",
+            "content.html": "<p>One</p>\n    <p>Two</p>\n    <p>Three</p>"
+        },
+        "node": {
+            "name": "One\n    Two\n    Three",
+            "content.value": "One\n    Two\n    Three",
+            "content.html": "\n    <p>One</p>\n    <p>Two</p>\n    <p>Three</p>\n  "
+        }
     }
 ]
