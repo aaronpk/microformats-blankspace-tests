@@ -103,7 +103,7 @@
         "expected": {
             "name": "Hello World",
             "content.value": "Hello World",
-            "content.html": "\n    <p>Hello World</p>\n  "
+            "content.html": "<p>Hello World</p>"
         },
         "php": {
             "name": "Hello World",
