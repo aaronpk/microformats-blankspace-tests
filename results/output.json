@@ -73,8 +73,8 @@
             "content.html": "<p>Hello<br>\nWorld</p>"
         },
         "php": {
-            "name": "Hello\n\nWorld",
-            "content.value": "Hello\n\nWorld",
+            "name": "Hello\nWorld",
+            "content.value": "Hello\nWorld",
             "content.html": "<p>Hello<br>\nWorld</p>"
         },
         "ruby": {
@@ -108,7 +108,7 @@
         "php": {
             "name": "Hello World",
             "content.value": "Hello World",
-            "content.html": "\n    <p>Hello World</p>\n  "
+            "content.html": "<p>Hello World</p>"
         },
         "ruby": {
             "name": "Hello World",
@@ -139,8 +139,8 @@
             "content.html": "Hello\nWorld"
         },
         "php": {
-            "name": "Hello\nWorld",
-            "content.value": "Hello\nWorld",
+            "name": "Hello World",
+            "content.value": "Hello World",
             "content.html": "Hello\nWorld"
         },
         "ruby": {
@@ -172,9 +172,9 @@
             "content.html": "<p>Hello</p><p>World</p>"
         },
         "php": {
-            "name": "Hello World",
-            "content.value": "Hello World",
-            "content.html": "<p>Hello</p>\n<p>World</p>"
+            "name": "Hello\nWorld",
+            "content.value": "Hello\nWorld",
+            "content.html": "<p>Hello</p><p>World</p>"
         },
         "ruby": {
             "name": "Hello\nWorld",
@@ -205,8 +205,8 @@
             "content.html": "Hello<br>\n    World"
         },
         "php": {
-            "name": "Hello\n\n    World",
-            "content.value": "Hello\n\n    World",
+            "name": "Hello\nWorld",
+            "content.value": "Hello\nWorld",
             "content.html": "Hello<br>\n    World"
         },
         "ruby": {
@@ -271,9 +271,9 @@
             "content.html": "<p>One</p>\n    <p>Two</p>\n    <p>Three</p>"
         },
         "php": {
-            "name": "One \n    Two \n    Three",
-            "content.value": "One \n    Two \n    Three",
-            "content.html": "\n    <p>One</p>\n    <p>Two</p>\n    <p>Three</p>\n  "
+            "name": "One\nTwo\nThree",
+            "content.value": "One\nTwo\nThree",
+            "content.html": "<p>One</p>\n    <p>Two</p>\n    <p>Three</p>"
         },
         "ruby": {
             "name": "One\n    Two\n    Three",
@@ -294,6 +294,105 @@
             "name": "One\n    Two\n    Three",
             "content.value": "One\n    Two\n    Three",
             "content.html": "\n    <p>One</p>\n    <p>Two</p>\n    <p>Three</p>\n  "
+        }
+    },
+    {
+        "test": "10",
+        "expected": {
+            "name": "one\ntwo\nthree",
+            "content.value": "one\ntwo\nthree",
+            "content.html": "<pre>one\ntwo\nthree</pre>"
+        },
+        "php": {
+            "name": "one two three",
+            "content.value": "one two three",
+            "content.html": "<pre>one\ntwo\nthree</pre>"
+        },
+        "ruby": {
+            "name": "one\ntwo\nthree",
+            "content.value": "one\ntwo\nthree",
+            "content.html": "\n    <pre>one\ntwo\nthree</pre>\n"
+        },
+        "python": {
+            "name": "one\ntwo\nthree",
+            "content.value": "\n    one\ntwo\nthree\n  ",
+            "content.html": "\n    <pre>one\ntwo\nthree</pre>\n  "
+        },
+        "go": {
+            "name": "one\ntwo\nthree",
+            "content.value": "\n    one\ntwo\nthree\n  ",
+            "content.html": "<pre>one\ntwo\nthree</pre>"
+        },
+        "node": {
+            "name": "one\ntwo\nthree",
+            "content.value": "one\ntwo\nthree",
+            "content.html": "\n    <pre>one\ntwo\nthree</pre>\n  "
+        }
+    },
+    {
+        "test": "11",
+        "expected": {
+            "name": "Hello World\n      one\n      two\n      three",
+            "content.value": "Hello World\n      one\n      two\n      three",
+            "content.html": "Hello World\n    <pre>\n      one\n      two\n      three\n    </pre>"
+        },
+        "php": {
+            "name": "Hello World one two three",
+            "content.value": "Hello World one two three",
+            "content.html": "Hello World\n    <pre>\n      one\n      two\n      three\n    </pre>"
+        },
+        "ruby": {
+            "name": "Hello World\n    \n      one\n      two\n      three",
+            "content.value": "Hello World\n    \n      one\n      two\n      three",
+            "content.html": "\n    Hello World\n    <pre>\n      one\n      two\n      three\n    </pre>\n"
+        },
+        "python": {
+            "name": "Hello World\n          one\n      two\n      three",
+            "content.value": "\n    Hello World\n          one\n      two\n      three\n    \n  ",
+            "content.html": "\n    Hello World\n    <pre>      one\n      two\n      three\n    </pre>\n  "
+        },
+        "go": {
+            "name": "Hello World\n          one\n      two\n      three",
+            "content.value": "\n    Hello World\n          one\n      two\n      three\n    \n  ",
+            "content.html": "Hello World\n    <pre>      one\n      two\n      three\n    </pre>"
+        },
+        "node": {
+            "name": "Hello World\n    \n      one\n      two\n      three",
+            "content.value": "Hello World\n    \n      one\n      two\n      three",
+            "content.html": "\n    Hello World\n    <pre>\n      one\n      two\n      three\n    </pre>\n  "
+        }
+    },
+    {
+        "test": "12",
+        "expected": {
+            "name": "Correct name",
+            "content.value": "Correct name Correct summary",
+            "content.html": "<span class=\"p-name\">Correct name</span>\n\n<span class=\"p-summary\">Correct summary</span>"
+        },
+        "php": {
+            "name": "Correct name",
+            "content.value": "Correct name Correct summary",
+            "content.html": "<span class=\"p-name\">Correct name</span>\n\n<span class=\"p-summary\">Correct summary</span>"
+        },
+        "ruby": {
+            "name": "Correct name",
+            "content.value": "Correct name\n\nCorrect summary",
+            "content.html": "\n<span class=\"p-name\">Correct name</span>\n\n<span class=\"p-summary\">Correct summary</span>\n"
+        },
+        "python": {
+            "name": "Correct name",
+            "content.value": "\nCorrect name\n\nCorrect summary\n",
+            "content.html": "\n<span class=\"p-name\">Correct name</span>\n\n<span class=\"p-summary\">Correct summary</span>\n"
+        },
+        "go": {
+            "name": "Correct name",
+            "content.value": "\nCorrect name\n\nCorrect summary\n",
+            "content.html": "<span class=\"p-name\">Correct name</span>\n\n<span class=\"p-summary\">Correct summary</span>"
+        },
+        "node": {
+            "name": "Correct name",
+            "content.value": "Correct name\n\nCorrect summary",
+            "content.html": "\n<span class=\"p-name\">Correct name</span>\n\n<span class=\"p-summary\">Correct summary</span>\n"
         }
     }
 ]

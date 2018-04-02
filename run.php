@@ -4,12 +4,13 @@ function post($url, $params) {
   $ch = curl_init($url);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
+  curl_setopt($ch, CURLOPT_REFERER, 'https://github.com/aaronpk/microformats-whitespace-tests');
   $response = curl_exec($ch);
   $data = json_decode($response, true);
   if($data && isset($data['items'][0]['properties'])) {
     return $data['items'][0]['properties'];
   } elseif($response) {
-    if(preg_match('~<pre><code>(.+)</code></pre>~ms', $response, $match)) {
+    if(preg_match('~<pre[^>]*><code>(.+)</code></pre>~ms', $response, $match)) {
       $data = json_decode(htmlspecialchars_decode($match[1]), true);
       return $data['items'][0]['properties'];
     }
@@ -20,6 +21,7 @@ function post($url, $params) {
 function get($url) {
   $ch = curl_init($url);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_REFERER, 'https://github.com/aaronpk/microformats-whitespace-tests');
   $response = curl_exec($ch);
   $data = json_decode($response, true);
   if($data && isset($data['items'][0]['properties'])) {
@@ -33,13 +35,15 @@ function get_parsed_result($parser, $html, $num=false) {
     case 'python':
       $url = 'https://python.microformats.io/';
       $param = 'doc';
+      // $url = 'https://kartikprabhu.com/connection/mfparser';
+      // $param = 'content';
       break;
     case 'ruby':
       $url = 'http://localhost:4567/parse';
       $param = 'html';
       break;
     case 'php':
-      $url = 'https://pin13.net/mf2/';
+      $url = 'https://mf2.io.dev/mf2/';
       $param = 'html';
       break;
     case 'go':
@@ -51,6 +55,7 @@ function get_parsed_result($parser, $html, $num=false) {
       break;
   }
 
+  echo "\tRunning $parser\n";
   if($num) {
     $response = get(str_replace('%', $num, $url));
   } else {
@@ -67,6 +72,12 @@ function get_parsed_result($parser, $html, $num=false) {
 chdir(__DIR__);
 $tests = glob('tests/*.html');
 
+usort($tests, function($a, $b) {
+  preg_match('/(\d+)/', $a, $ma);
+  preg_match('/(\d+)/', $b, $mb);
+  return (int)$ma[1] > (int)$mb[1];
+});
+
 $data = [];
 
 foreach($tests as $htmlfile) {
@@ -80,6 +91,11 @@ foreach($tests as $htmlfile) {
     'content.html' => $json['items'][0]['properties']['content'][0]['html'],
   ];
 
+  // $python = get_parsed_result('python', $html);
+  // print_r($python);
+  // die();
+
+  echo "Testing $htmlfile\n";
   $php = get_parsed_result('php', $html);
   $ruby = get_parsed_result('ruby', $html);
   $python = get_parsed_result('python', $html);
