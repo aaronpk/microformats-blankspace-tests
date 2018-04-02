@@ -1,0 +1,23 @@
+{
+    "items": [
+        {
+            "type": [
+                "h-entry"
+            ],
+            "properties": {
+                "name": [
+                    "Correct name"
+                ],
+                "summary": [
+                    "Correct summary"
+                ],
+                "content": [
+                    {
+                        "html": "<span class=\"p-name\">Correct name</span>\n\n<span class=\"p-summary\">Correct summary</span>",
+                        "value": "Correct name Correct summary"
+                    }
+                ]
+            }
+        }
+    ]
+}

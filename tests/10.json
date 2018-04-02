@@ -1,0 +1,20 @@
+{
+    "items": [
+        {
+            "type": [
+                "h-entry"
+            ],
+            "properties": {
+                "name": [
+                    "one\ntwo\nthree"
+                ],
+                "content": [
+                    {
+                        "html": "<pre>one\ntwo\nthree</pre>",
+                        "value": "one\ntwo\nthree"
+                    }
+                ]
+            }
+        }
+    ]
+}
