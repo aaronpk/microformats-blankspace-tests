@@ -10,7 +10,7 @@
                 ],
                 "content": [
                     {
-                        "html": "Hello World\n    <pre>\n      one\n      two\n      three\n    </pre>",
+                        "html": "Hello World\n    <pre>      one\n      two\n      three\n    </pre>",
                         "value": "Hello World\n      one\n      two\n      three"
                     }
                 ]
