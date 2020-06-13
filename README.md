@@ -1,12 +1,18 @@
-Microformats Whitespace Tests
+Microformats Blankspace Tests
 =============================
 
-Some test cases for whitespace handling in Microformats.
+Some test cases for blank space handling in Microformats.
+
+More details:
+
+* https://github.com/microformats/microformats2-parsing/issues/15
+* https://github.com/microformats/microformats2-parsing/issues/48
+
 
 Test Results
 ------------
 
-https://pin13.net/mf2/whitespace.html
+https://pin13.net/mf2/blankspace.html
 
 
 Compiling Results

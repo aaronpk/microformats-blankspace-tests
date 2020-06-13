@@ -2,7 +2,7 @@
 chdir(__DIR__);
 $data = json_decode(file_get_contents('output.json'), true);
 
-function explicit_whitespace($v) {
+function explicit_blankspace($v) {
   $v = str_replace("\n", '\n', $v);
   $v = str_replace("\r", '\r', $v);
   return htmlspecialchars($v);
@@ -69,13 +69,13 @@ td.testnum a {
       <?php foreach(['name', 'content.value', 'content.html'] as $j=>$prop): ?>
         <tr class="<?= $j == 0 ? 'top' : '' ?> <?= $i == count($data)-1 && $j == 2 ? 'bottom' : '' ?> <?= $i % 2 == 0 ? 'even' : 'odd' ?>">
           <?php if($j == 0): ?>
-            <td rowspan="3" class="testnum <?= $i == count($data)-1 ? 'bottom' : '' ?>"><a href="https://github.com/aaronpk/microformats-whitespace-tests/blob/master/tests/<?= $test['test'] ?>.html"><?= $test['test'] ?></td>
+            <td rowspan="3" class="testnum <?= $i == count($data)-1 ? 'bottom' : '' ?>"><a href="https://github.com/aaronpk/microformats-blankspace-tests/blob/main/tests/<?= $test['test'] ?>.html"><?= $test['test'] ?></td>
             <td rowspan="3" class="html <?= $i == count($data)-1 ? 'bottom' : '' ?>"><pre><?= htmlspecialchars(file_get_contents('../tests/'.$test['test'].'.html')) ?></pre></td>
           <?php endif ?>
           <td><?= $prop ?></td>
-          <td><pre><?= explicit_whitespace($test['expected'][$prop]) ?></pre></td>
+          <td><pre><?= explicit_blankspace($test['expected'][$prop]) ?></pre></td>
           <?php foreach(['php','ruby','python','go','node'] as $parser): ?>
-            <td class="<?= normalize($test['expected'][$prop]) == normalize($test[$parser][$prop]) ? 'success' : 'fail' ?>"><pre><?= explicit_whitespace($test[$parser][$prop]) ?></pre></td>
+            <td class="<?= normalize($test['expected'][$prop]) == normalize($test[$parser][$prop]) ? 'success' : 'fail' ?>"><pre><?= explicit_blankspace($test[$parser][$prop]) ?></pre></td>
           <?php endforeach ?>
         </tr>
       <?php endforeach ?>

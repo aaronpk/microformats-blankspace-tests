@@ -4,7 +4,7 @@ function post($url, $params) {
   $ch = curl_init($url);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
-  curl_setopt($ch, CURLOPT_REFERER, 'https://github.com/aaronpk/microformats-whitespace-tests');
+  curl_setopt($ch, CURLOPT_REFERER, 'https://github.com/aaronpk/microformats-blankspace-tests');
   $response = curl_exec($ch);
   $data = json_decode($response, true);
   if($data && isset($data['items'][0]['properties'])) {
@@ -21,7 +21,7 @@ function post($url, $params) {
 function get($url) {
   $ch = curl_init($url);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  curl_setopt($ch, CURLOPT_REFERER, 'https://github.com/aaronpk/microformats-whitespace-tests');
+  curl_setopt($ch, CURLOPT_REFERER, 'https://github.com/aaronpk/microformats-blankspace-tests');
   $response = curl_exec($ch);
   $data = json_decode($response, true);
   if($data && isset($data['items'][0]['properties'])) {
@@ -51,7 +51,7 @@ function get_parsed_result($parser, $html, $num=false) {
       $param = 'html';
       break;
     case 'node':
-      $url = 'https://sturdy-backbone.glitch.me/mf2/?url=https://raw.githubusercontent.com/aaronpk/microformats-whitespace-tests/master/tests/%.html';
+      $url = 'https://sturdy-backbone.glitch.me/mf2/?url=https://raw.githubusercontent.com/aaronpk/microformats-blankspace-tests/main/tests/%.html';
       break;
   }
 
